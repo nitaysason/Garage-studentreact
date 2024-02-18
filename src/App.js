@@ -121,7 +121,7 @@ const App = () => {
       <br></br>
 
       <h1>Student Management System without props</h1>
-      <StudentComponent name="John Doe" age={25} email="john@example.com" />
+      <StudentComponent name="Adi sason" age={39} email="adi@gmail.com" />
       <br></br>
       <h1>Student Management System with props</h1>
       <Student student={studentInfo} />
