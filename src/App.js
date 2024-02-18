@@ -8,6 +8,7 @@ const App = () => {
   const [price, setPrice] = useState('');
   const [image, setImage] = useState(null); 
   const [editIndex, setEditIndex] = useState(null);
+  
   const studentInfo = {
     name: "nitay sason",
     age: 41,
@@ -89,7 +90,8 @@ const App = () => {
             type="file"
             accept="image/*"
             onChange={handleImageChange}
-            className="form-control"
+            className="form-control" 
+            
           />
         </div>
         <div className="col">
@@ -100,7 +102,7 @@ const App = () => {
         {cars.map((car, index) => (
           <div className="col-md-4 mb-3" key={index}>
             <div className="card">
-              <img src={car.image} className="card-img-top" alt="Car" />
+            <img src={car.image} className="card-img-top" alt="Car" style={{ width: '100px' }} />
               <div className="card-body">
                 <h5 className="card-title">{car.name}</h5>
                 <p className="card-text">Brand: {car.brand}</p>
