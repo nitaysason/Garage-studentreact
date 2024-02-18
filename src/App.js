@@ -3,7 +3,7 @@ import StudentComponent from './StudentComponent';
 import Student from './Student';
 const App = () => {
   const [cars, setCars] = useState([]);
-  const [name, setName] = useState('');
+  const [color, setColor] = useState('');
   const [brand, setBrand] = useState('');
   const [price, setPrice] = useState('');
   const [image, setImage] = useState(null); 
@@ -15,19 +15,19 @@ const App = () => {
     email: "nitaysason@gmail.com"
   };
   const addCar = () => {
-    if (name.trim() !== '' && brand.trim() !== '' && price.trim() !== '' && image) {
+    if (color.trim() !== '' && brand.trim() !== '' && price.trim() !== '' && image) {
       if (editIndex !== null) {
         const newCars = [...cars];
-        newCars[editIndex] = { name: name.trim(), brand: brand.trim(), price: price.trim(), image: image };
+        newCars[editIndex] = { color: color.trim(), brand: brand.trim(), price: price.trim(), image: image };
         setCars(newCars);
-        setName('');
+        setColor('');
         setBrand('');
         setPrice('');
         setImage(null);
         setEditIndex(null);
       } else {
-        setCars([...cars, { name: name.trim(), brand: brand.trim(), price: price.trim(), image: image }]);
-        setName('');
+        setCars([...cars, { color: color.trim(), brand: brand.trim(), price: price.trim(), image: image }]);
+        setColor('');
         setBrand('');
         setPrice('');
         setImage(null);
@@ -42,7 +42,7 @@ const App = () => {
   };
 
   const editCar = (index) => {
-    setName(cars[index].name);
+    setColor(cars[index].name);
     setBrand(cars[index].brand);
     setPrice(cars[index].price);
     setImage(cars[index].image);
@@ -61,10 +61,10 @@ const App = () => {
         <div className="col">
           <input
             type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={color}
+            onChange={(e) => setColor(e.target.value)}
             className="form-control"
-            placeholder="Car Name"
+            placeholder="Car Color"
           />
         </div>
         <div className="col">
@@ -104,7 +104,7 @@ const App = () => {
             <div className="card">
             <img src={car.image} className="card-img-top" alt="Car" style={{ width: '100px' }} />
               <div className="card-body">
-                <h5 className="card-title">{car.name}</h5>
+                <h5 className="card-title">{car.color}</h5>
                 <p className="card-text">Brand: {car.brand}</p>
                 <p className="card-text">Price: {car.price}</p>
                 <button onClick={() => removeCar(index)} className="btn btn-danger mr-2">Remove</button>
